@@ -30,7 +30,7 @@ public class UserMovieController {
         List<Movie> list = new ArrayList<Movie>();
         movieIds.forEach(
                 mid -> {
-                    MovieInfo movieInfo = restTemplate.getForObject("http://localhost:8082/movie/"+mid, MovieInfo.class);
+                    MovieInfo movieInfo = restTemplate.getForObject("http://MOVIES-INFO-SERVICE/movie/"+mid, MovieInfo.class);
                     list.add(new Movie(movieInfo.getId(), movieInfo.getName(), "great story", 4.5f, movieInfo.getYear()));
                     System.out.println(movieInfo);
                 }
